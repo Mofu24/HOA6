@@ -299,3 +299,413 @@ The following packages will be upgraded:
 2023-10-02 11:40:19,004 p=4539 u=flores n=ansible | 192.168.164.8              : ok=3    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
 2023-10-02 12:04:16,378 p=4910 u=flores n=ansible | PLAY [all] *********************************************************************
 2023-10-02 12:04:16,391 p=4910 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:06:36,841 p=4980 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:06:36,852 p=4980 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:06:47,280 p=4980 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:06:47,311 p=4980 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:07:09,508 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:07:09,515 p=4980 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:07:09,539 p=4980 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:07:09,572 p=4980 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:07:13,951 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:07:13,957 p=4980 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:07:14,009 p=4980 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:07:23,556 p=4980 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:07:43,235 p=4980 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:07:43,256 p=4980 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:07:43,264 p=4980 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:07:45,213 p=4980 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:07:59,399 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:07:59,413 p=4980 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:07:59,446 p=4980 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:08:02,984 p=4980 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:08:02,990 p=4980 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:08:03,002 p=4980 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:08:05,269 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:08:05,290 p=4980 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:08:05,297 p=4980 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:08:07,312 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:08:26,956 p=4980 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:08:26,970 p=4980 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:08:27,022 p=4980 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:08:32,534 p=4980 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:08:32,543 p=4980 u=flores n=ansible | TASK [Mariadb- Restarting/Enabling name=mariadb, state=restarted, enabled=True] ***
+2023-10-02 12:08:34,313 p=4980 u=flores n=ansible | fatal: [192.168.164.8]: FAILED! => {"changed": false, "msg": "Could not find the requested service mariadb: host"}
+2023-10-02 12:08:38,106 p=4980 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:08:38,114 p=4980 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:08:38,128 p=4980 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:08:38,145 p=4980 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:08:38,147 p=4980 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:08:38,147 p=4980 u=flores n=ansible | 192.168.164.10             : ok=7    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:08:38,147 p=4980 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:08:38,147 p=4980 u=flores n=ansible | 192.168.164.8              : ok=3    changed=0    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:10:33,734 p=5172 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:10:33,745 p=5172 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:10:36,042 p=5172 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:10:38,142 p=5172 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:11:16,499 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:11:16,504 p=5172 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:11:16,540 p=5172 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:11:16,560 p=5172 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:11:21,197 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:11:21,204 p=5172 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:11:21,250 p=5172 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:11:35,248 p=5172 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:11:35,630 p=5172 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:11:35,647 p=5172 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:11:35,664 p=5172 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:11:37,473 p=5172 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:11:38,027 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:11:38,042 p=5172 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:11:38,074 p=5172 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:11:41,734 p=5172 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:11:41,742 p=5172 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:11:41,765 p=5172 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:11:43,988 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:11:44,013 p=5172 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:11:44,021 p=5172 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:11:45,679 p=5172 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:11:46,055 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:11:46,068 p=5172 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:11:46,096 p=5172 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:12:23,265 p=5172 u=flores n=ansible | The following package was automatically installed and is no longer required:
+  libllvm7
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  galera-3 gawk libaio1 libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
+  libhtml-template-perl libjemalloc1 libmysqlclient20 libreadline5 libsigsegv2
+  libterm-readkey-perl mariadb-client-10.1 mariadb-client-core-10.1
+  mariadb-common mariadb-server-10.1 mariadb-server-core-10.1 mysql-common
+  socat
+Suggested packages:
+  gawk-doc libmldbm-perl libnet-daemon-perl libsql-statement-perl
+  libipc-sharedcache-perl mailx mariadb-test tinyca
+The following NEW packages will be installed:
+  galera-3 gawk libaio1 libconfig-inifiles-perl libdbd-mysql-perl libdbi-perl
+  libhtml-template-perl libjemalloc1 libmysqlclient20 libreadline5 libsigsegv2
+  libterm-readkey-perl mariadb-client-10.1 mariadb-client-core-10.1
+  mariadb-common mariadb-server mariadb-server-10.1 mariadb-server-core-10.1
+  mysql-common socat
+0 upgraded, 20 newly installed, 0 to remove and 0 not upgraded.
+2023-10-02 12:12:23,266 p=5172 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:12:23,272 p=5172 u=flores n=ansible | TASK [Mariadb- Restarting/Enabling name=mariadb, state=restarted, enabled=True] ***
+2023-10-02 12:12:33,742 p=5172 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:12:41,975 p=5172 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:12:41,981 p=5172 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:12:42,013 p=5172 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:12:47,513 p=5172 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:12:47,525 p=5172 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:12:47,525 p=5172 u=flores n=ansible | 192.168.164.10             : ok=7    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:12:47,525 p=5172 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:12:47,526 p=5172 u=flores n=ansible | 192.168.164.8              : ok=5    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:15:46,453 p=5380 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:15:46,464 p=5380 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:15:48,835 p=5380 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:15:49,046 p=5380 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:16:19,315 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:16:19,321 p=5380 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:16:19,366 p=5380 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:16:19,374 p=5380 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:16:23,690 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:16:23,696 p=5380 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:16:23,745 p=5380 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:16:30,550 p=5380 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:16:30,589 p=5380 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:16:30,610 p=5380 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:16:30,619 p=5380 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:16:32,262 p=5380 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:16:53,530 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:16:53,542 p=5380 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:16:53,590 p=5380 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:17:08,737 p=5380 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:17:08,745 p=5380 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:17:08,761 p=5380 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:17:11,238 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:17:11,259 p=5380 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:17:11,266 p=5380 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:17:22,972 p=5380 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:17:23,596 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:17:23,608 p=5380 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:17:23,635 p=5380 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:17:25,822 p=5380 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:17:25,829 p=5380 u=flores n=ansible | TASK [Mariadb- Restarting/Enabling name=mariadb, state=restarted, enabled=True] ***
+2023-10-02 12:17:30,154 p=5380 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:17:31,030 p=5380 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:17:31,037 p=5380 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:17:31,075 p=5380 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:17:34,511 p=5380 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:17:34,533 p=5380 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:17:34,548 p=5380 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:17:40,206 p=5380 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:17:40,222 p=5380 u=flores n=ansible | TASK [install samba package name=samba, state=latest] **************************
+2023-10-02 12:18:09,445 p=5380 u=flores n=ansible | The following package was automatically installed and is no longer required:
+  libllvm7
+Use 'sudo apt autoremove' to remove it.
+The following additional packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libnl-route-3-200
+  libpython-stdlib librados2 python python-crypto python-dnspython python-ldb
+  python-minimal python-samba python-tdb python2.7 python2.7-minimal
+  samba-common samba-common-bin samba-dsdb-modules samba-vfs-modules tdb-tools
+Suggested packages:
+  python-doc python-tk python-crypto-doc python-gpgme python2.7-doc
+  binfmt-support bind9 bind9utils ctdb ldb-tools ntp | chrony smbldap-tools
+  winbind heimdal-clients
+The following NEW packages will be installed:
+  attr ibverbs-providers libcephfs2 libibverbs1 libnl-route-3-200
+  libpython-stdlib librados2 python python-crypto python-dnspython python-ldb
+  python-minimal python-samba python-tdb python2.7 python2.7-minimal samba
+  samba-common samba-common-bin samba-dsdb-modules samba-vfs-modules tdb-tools
+0 upgraded, 22 newly installed, 0 to remove and 0 not upgraded.
+2023-10-02 12:18:09,446 p=5380 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:18:09,466 p=5380 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:18:09,467 p=5380 u=flores n=ansible | 192.168.164.10             : ok=7    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:18:09,467 p=5380 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:18:09,467 p=5380 u=flores n=ansible | 192.168.164.8              : ok=7    changed=2    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:23:25,896 p=5619 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:23:25,906 p=5619 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:23:28,376 p=5619 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:23:34,219 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:23:58,414 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:23:58,420 p=5619 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:23:58,442 p=5619 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:23:58,468 p=5619 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:24:03,292 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:24:03,298 p=5619 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:24:03,339 p=5619 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:24:17,564 p=5619 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:24:17,582 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:24:17,613 p=5619 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:24:17,618 p=5619 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:24:21,514 p=5619 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:24:29,960 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:24:29,974 p=5619 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:24:30,005 p=5619 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:24:47,787 p=5619 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:24:47,793 p=5619 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:24:47,810 p=5619 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:24:50,042 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:24:50,058 p=5619 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:24:50,076 p=5619 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:24:51,642 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:24:51,937 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:24:51,958 p=5619 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:24:51,980 p=5619 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:24:54,273 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:24:54,279 p=5619 u=flores n=ansible | TASK [Mariadb- Restarting/Enabling name=mariadb, state=restarted, enabled=True] ***
+2023-10-02 12:25:02,338 p=5619 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:25:10,557 p=5619 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:25:10,563 p=5619 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:25:10,603 p=5619 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:25:13,069 p=5619 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:25:13,088 p=5619 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:25:13,099 p=5619 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:25:14,597 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:25:14,623 p=5619 u=flores n=ansible | TASK [install samba package name=samba, state=latest] **************************
+2023-10-02 12:25:16,705 p=5619 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:25:16,721 p=5619 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:25:16,721 p=5619 u=flores n=ansible | 192.168.164.10             : ok=7    changed=1    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:25:16,721 p=5619 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:25:16,721 p=5619 u=flores n=ansible | 192.168.164.8              : ok=7    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:27:20,737 p=5836 u=flores n=ansible | playbook: site.yml
+2023-10-02 12:27:20,737 p=5836 u=flores n=ansible |   play #1 (all): all	TAGS: []
+2023-10-02 12:27:20,738 p=5836 u=flores n=ansible |       TASK TAGS: [always]
+
+2023-10-02 12:27:20,738 p=5836 u=flores n=ansible |   play #2 (web_servers): web_servers	TAGS: []
+2023-10-02 12:27:20,738 p=5836 u=flores n=ansible |       TASK TAGS: [apache, apache2, centos, httpd, ubuntu]
+
+2023-10-02 12:27:20,738 p=5836 u=flores n=ansible |   play #3 (db_servers): db_servers	TAGS: []
+2023-10-02 12:27:20,739 p=5836 u=flores n=ansible |       TASK TAGS: [centos, db, mariadb, ubuntu]
+
+2023-10-02 12:27:20,739 p=5836 u=flores n=ansible |   play #4 (file_servers): file_servers	TAGS: []
+2023-10-02 12:27:20,740 p=5836 u=flores n=ansible |       TASK TAGS: [samba]
+
+2023-10-02 12:28:20,215 p=5843 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:28:20,225 p=5843 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:28:32,441 p=5843 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:28:34,591 p=5843 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:28:52,795 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:28:52,801 p=5843 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:28:52,819 p=5843 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:28:52,837 p=5843 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:28:57,489 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:28:57,494 p=5843 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:28:57,542 p=5843 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:29:11,966 p=5843 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:29:11,994 p=5843 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:29:12,022 p=5843 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:29:12,040 p=5843 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:29:23,749 p=5843 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:29:26,375 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:29:26,388 p=5843 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:29:26,417 p=5843 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:29:28,609 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:29:28,621 p=5843 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:29:28,628 p=5843 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:29:30,649 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:29:32,380 p=5843 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:29:32,391 p=5843 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:29:32,434 p=5843 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:29:35,687 p=5843 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:29:35,710 p=5843 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:29:35,718 p=5843 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:29:37,174 p=5843 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:29:37,192 p=5843 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:29:37,193 p=5843 u=flores n=ansible | 192.168.164.10             : ok=6    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-10-02 12:29:37,193 p=5843 u=flores n=ansible | 192.168.164.6              : ok=3    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:29:37,193 p=5843 u=flores n=ansible | 192.168.164.8              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:30:39,322 p=5993 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:30:39,331 p=5993 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:30:49,051 p=5993 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:30:53,590 p=5993 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:31:11,983 p=5993 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:31:11,990 p=5993 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:31:12,012 p=5993 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:31:12,042 p=5993 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:31:16,219 p=5993 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:31:16,227 p=5993 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:31:16,274 p=5993 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:31:30,011 p=5993 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:31:30,364 p=5993 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:31:30,393 p=5993 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:31:30,401 p=5993 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:31:32,056 p=5993 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:31:52,715 p=5993 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:31:52,734 p=5993 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:31:52,741 p=5993 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:31:54,634 p=5993 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:32:16,280 p=5993 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:32:16,295 p=5993 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:32:16,322 p=5993 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:32:28,391 p=5993 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:32:28,398 p=5993 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:32:28,436 p=5993 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:32:32,855 p=5993 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:32:32,870 p=5993 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:32:32,878 p=5993 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:32:34,497 p=5993 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:32:34,512 p=5993 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:32:34,515 p=5993 u=flores n=ansible | 192.168.164.10             : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:32:34,516 p=5993 u=flores n=ansible | 192.168.164.6              : ok=3    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-10-02 12:32:34,516 p=5993 u=flores n=ansible | 192.168.164.8              : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:33:02,344 p=6159 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:33:02,354 p=6159 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:33:04,661 p=6159 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:33:14,694 p=6159 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:33:34,909 p=6159 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:33:34,915 p=6159 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:33:34,936 p=6159 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:33:34,958 p=6159 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:33:39,600 p=6159 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:33:39,606 p=6159 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:33:39,655 p=6159 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:33:43,578 p=6159 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:34:00,177 p=6159 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:34:00,203 p=6159 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:34:00,211 p=6159 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:34:01,921 p=6159 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:34:12,337 p=6159 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:34:12,350 p=6159 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:34:12,394 p=6159 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:34:15,900 p=6159 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:34:15,908 p=6159 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:34:15,931 p=6159 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:34:18,109 p=6159 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:34:18,133 p=6159 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:34:18,138 p=6159 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:34:19,622 p=6159 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:34:19,986 p=6159 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:34:20,003 p=6159 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:34:20,016 p=6159 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:34:21,577 p=6159 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:34:21,593 p=6159 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:34:21,593 p=6159 u=flores n=ansible | 192.168.164.10             : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:34:21,593 p=6159 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:34:21,593 p=6159 u=flores n=ansible | 192.168.164.8              : ok=4    changed=0    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2023-10-02 12:35:32,537 p=6320 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:35:32,548 p=6320 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:35:44,855 p=6320 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:35:45,081 p=6320 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:36:09,588 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:09,594 p=6320 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:36:09,639 p=6320 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:36:09,643 p=6320 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:36:15,091 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:15,099 p=6320 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:36:15,143 p=6320 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:36:19,072 p=6320 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:36:19,355 p=6320 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:36:19,390 p=6320 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:36:19,404 p=6320 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:36:21,068 p=6320 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:36:21,705 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:21,718 p=6320 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:36:21,760 p=6320 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:36:25,256 p=6320 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:36:25,262 p=6320 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:36:25,290 p=6320 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:36:27,448 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:27,462 p=6320 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:36:27,475 p=6320 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:36:29,037 p=6320 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:36:29,375 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:29,385 p=6320 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:36:29,409 p=6320 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:36:31,574 p=6320 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:36:31,580 p=6320 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:36:31,605 p=6320 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:36:38,680 p=6320 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:36:38,701 p=6320 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:36:38,709 p=6320 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:36:40,121 p=6320 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:36:40,136 p=6320 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:36:40,136 p=6320 u=flores n=ansible | 192.168.164.10             : ok=6    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:36:40,136 p=6320 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:36:40,136 p=6320 u=flores n=ansible | 192.168.164.8              : ok=5    changed=0    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
+2023-10-02 12:42:49,467 p=6524 u=flores n=ansible | PLAY [all] *********************************************************************
+2023-10-02 12:42:49,477 p=6524 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:43:01,762 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:43:01,885 p=6524 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:43:18,264 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:43:18,270 p=6524 u=flores n=ansible | TASK [install updates (CentOS) update_only=True, update_cache=True] ************
+2023-10-02 12:43:18,303 p=6524 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:43:18,319 p=6524 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:43:22,528 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:43:22,534 p=6524 u=flores n=ansible | TASK [install updates (Ubuntu) upgrade=dist, update_cache=True] ****************
+2023-10-02 12:43:22,580 p=6524 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:43:41,508 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:43:42,246 p=6524 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:43:42,273 p=6524 u=flores n=ansible | PLAY [web_servers] *************************************************************
+2023-10-02 12:43:42,286 p=6524 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:43:44,000 p=6524 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:43:56,569 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:43:56,583 p=6524 u=flores n=ansible | TASK [install apache and php for Ubuntu servers name=['apache2', 'libapache2-mod-php'], state=latest, update_cache=True] ***
+2023-10-02 12:43:56,622 p=6524 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:44:00,346 p=6524 u=flores n=ansible | ok: [192.168.164.6]
+2023-10-02 12:44:00,352 p=6524 u=flores n=ansible | TASK [install apache and php for CentOS servers name=['httpd', 'php'], state=latest] ***
+2023-10-02 12:44:00,378 p=6524 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:44:02,716 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:44:02,724 p=6524 u=flores n=ansible | TASK [start httpd (CentOS) name=httpd, state=started] **************************
+2023-10-02 12:44:02,752 p=6524 u=flores n=ansible | skipping: [192.168.164.6]
+2023-10-02 12:44:08,997 p=6524 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:44:09,009 p=6524 u=flores n=ansible | PLAY [db_servers] **************************************************************
+2023-10-02 12:44:09,017 p=6524 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:44:10,651 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:44:10,912 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:44:10,924 p=6524 u=flores n=ansible | TASK [install mariadb package (Ubuntu) name=mariadb-server, state=latest] ******
+2023-10-02 12:44:10,950 p=6524 u=flores n=ansible | skipping: [192.168.164.10]
+2023-10-02 12:44:13,263 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:44:13,272 p=6524 u=flores n=ansible | TASK [Mariadb- Restarting/Enabling name=mariadb, state=restarted, enabled=True] ***
+2023-10-02 12:44:16,492 p=6524 u=flores n=ansible | changed: [192.168.164.8]
+2023-10-02 12:44:34,270 p=6524 u=flores n=ansible | changed: [192.168.164.10]
+2023-10-02 12:44:34,276 p=6524 u=flores n=ansible | TASK [install mariadb package (CentOS) name=mariadb-server, state=latest] ******
+2023-10-02 12:44:34,315 p=6524 u=flores n=ansible | skipping: [192.168.164.8]
+2023-10-02 12:44:37,895 p=6524 u=flores n=ansible | ok: [192.168.164.10]
+2023-10-02 12:44:37,916 p=6524 u=flores n=ansible | PLAY [file_servers] ************************************************************
+2023-10-02 12:44:37,923 p=6524 u=flores n=ansible | TASK [Gathering Facts gather_subset=['!hardware', '!facter', '!ohai'], gather_timeout=10] ***
+2023-10-02 12:44:49,338 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:44:49,349 p=6524 u=flores n=ansible | TASK [install samba package name=samba, state=latest] **************************
+2023-10-02 12:44:51,618 p=6524 u=flores n=ansible | ok: [192.168.164.8]
+2023-10-02 12:44:51,637 p=6524 u=flores n=ansible | PLAY RECAP *********************************************************************
+2023-10-02 12:44:51,637 p=6524 u=flores n=ansible | 192.168.164.10             : ok=8    changed=2    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:44:51,637 p=6524 u=flores n=ansible | 192.168.164.6              : ok=4    changed=0    unreachable=0    failed=0    skipped=3    rescued=0    ignored=0   
+2023-10-02 12:44:51,637 p=6524 u=flores n=ansible | 192.168.164.8              : ok=7    changed=1    unreachable=0    failed=0    skipped=2    rescued=0    ignored=0   
